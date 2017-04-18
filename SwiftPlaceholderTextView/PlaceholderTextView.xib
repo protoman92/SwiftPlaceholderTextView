@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaceholderTextView" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
+            <connections>
+                <outlet property="placeholderView" destination="cNk-Z1-Ovg" id="nFI-Ed-SPV"/>
+                <outlet property="textView" destination="dHg-bm-Abf" id="Ldk-Np-VsE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="UPE-GM-4f8" customClass="PlaceholderTextView" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="placeholder" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNk-Z1-Ovg">
+                    <rect key="frame" x="10" y="13" width="90.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="REGULAR"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="fontSize" value="TEXT_MID"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dHg-bm-Abf">
+                    <rect key="frame" x="5" y="5" width="370" height="662"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="REGULAR"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="fontSize" value="TEXT_MID"/>
+                    </userDefinedRuntimeAttributes>
+                </textView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="dHg-bm-Abf" firstAttribute="top" secondItem="UPE-GM-4f8" secondAttribute="top" constant="5" id="HQa-42-ybK" customClass="CommonLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="SPACE_SMALL"/>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="cNk-Z1-Ovg" firstAttribute="top" secondItem="dHg-bm-Abf" secondAttribute="top" constant="8" id="JEQ-1e-7Da" customClass="CommonLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="SPACE_CUSTOM"/>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="cNk-Z1-Ovg" firstAttribute="leading" secondItem="dHg-bm-Abf" secondAttribute="leading" constant="5" id="MWL-jw-7Mz" customClass="CommonLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="SPACE_SMALL"/>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstAttribute="bottom" secondItem="dHg-bm-Abf" secondAttribute="bottom" id="YnB-Fp-mzd" customClass="CommonLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="SPACE_NONE"/>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="dHg-bm-Abf" firstAttribute="leading" secondItem="UPE-GM-4f8" secondAttribute="leading" constant="5" id="fRz-Lq-wAo" customClass="CommonLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="SPACE_SMALL"/>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstAttribute="trailing" secondItem="dHg-bm-Abf" secondAttribute="trailing" id="le7-2a-tFM" customClass="CommonLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="SPACE_NONE"/>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+            </constraints>
+        </view>
+    </objects>
+</document>
