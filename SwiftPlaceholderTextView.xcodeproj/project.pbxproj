@@ -14,16 +14,8 @@
 		D364FE331EA5EBEC00ED702C /* SwiftPlaceholderTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = D364FE251EA5EBEC00ED702C /* SwiftPlaceholderTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D364FE3E1EA5ED5300ED702C /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364FE3C1EA5ED5300ED702C /* PlaceholderTextView.swift */; };
 		D364FE3F1EA5ED5300ED702C /* PlaceholderTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D364FE3D1EA5ED5300ED702C /* PlaceholderTextView.xib */; };
-		D364FE6A1EA60DD800ED702C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D364FE5B1EA60DD800ED702C /* Info.plist */; };
-		D364FE6B1EA60DD800ED702C /* InputFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364FE5D1EA60DD800ED702C /* InputFieldType.swift */; };
-		D364FE6C1EA60DD800ED702C /* UITextInputUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364FE5E1EA60DD800ED702C /* UITextInputUtil.swift */; };
-		D364FE6D1EA60DD800ED702C /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364FE601EA60DD800ED702C /* Duration.swift */; };
-		D364FE6E1EA60DD800ED702C /* ActionSelectorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364FE621EA60DD800ED702C /* ActionSelectorType.swift */; };
-		D364FE6F1EA60DD800ED702C /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364FE631EA60DD800ED702C /* BasePresenter.swift */; };
-		D364FE701EA60DD800ED702C /* UIViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364FE641EA60DD800ED702C /* UIViewPresenter.swift */; };
-		D364FE711EA60DD800ED702C /* UIScrollViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364FE661EA60DD800ED702C /* UIScrollViewUtil.swift */; };
-		D364FE721EA60DD800ED702C /* SwiftUIUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = D364FE671EA60DD800ED702C /* SwiftUIUtilities.h */; };
-		D364FE731EA60DD800ED702C /* UIViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364FE691EA60DD800ED702C /* UIViewUtil.swift */; };
+		D3A66EA61EA87DCE00736FDD /* pod-publish.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3A66EA41EA87DCE00736FDD /* pod-publish.txt */; };
+		D3A66EA71EA87DCE00736FDD /* SwiftPlaceholderTextView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D3A66EA51EA87DCE00736FDD /* SwiftPlaceholderTextView.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,16 +42,8 @@
 		D364FE321EA5EBEC00ED702C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D364FE3C1EA5ED5300ED702C /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		D364FE3D1EA5ED5300ED702C /* PlaceholderTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderTextView.xib; sourceTree = "<group>"; };
-		D364FE5B1EA60DD800ED702C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D364FE5D1EA60DD800ED702C /* InputFieldType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputFieldType.swift; sourceTree = "<group>"; };
-		D364FE5E1EA60DD800ED702C /* UITextInputUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextInputUtil.swift; sourceTree = "<group>"; };
-		D364FE601EA60DD800ED702C /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
-		D364FE621EA60DD800ED702C /* ActionSelectorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSelectorType.swift; sourceTree = "<group>"; };
-		D364FE631EA60DD800ED702C /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
-		D364FE641EA60DD800ED702C /* UIViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewPresenter.swift; sourceTree = "<group>"; };
-		D364FE661EA60DD800ED702C /* UIScrollViewUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewUtil.swift; sourceTree = "<group>"; };
-		D364FE671EA60DD800ED702C /* SwiftUIUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftUIUtilities.h; sourceTree = "<group>"; };
-		D364FE691EA60DD800ED702C /* UIViewUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewUtil.swift; sourceTree = "<group>"; };
+		D3A66EA41EA87DCE00736FDD /* pod-publish.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pod-publish.txt"; sourceTree = "<group>"; };
+		D3A66EA51EA87DCE00736FDD /* SwiftPlaceholderTextView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftPlaceholderTextView.podspec; sourceTree = "<group>"; };
 		DA2DD4438E4C648E9C7435DB /* Pods-SwiftPlaceholderTextView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPlaceholderTextView.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftPlaceholderTextView/Pods-SwiftPlaceholderTextView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +82,8 @@
 		D364FE181EA5EBEC00ED702C = {
 			isa = PBXGroup;
 			children = (
+				D3A66EA41EA87DCE00736FDD /* pod-publish.txt */,
+				D3A66EA51EA87DCE00736FDD /* SwiftPlaceholderTextView.podspec */,
 				D364FE241EA5EBEC00ED702C /* SwiftPlaceholderTextView */,
 				D364FE2F1EA5EBEC00ED702C /* SwiftPlaceholderTextViewTests */,
 				D364FE231EA5EBEC00ED702C /* Products */,
@@ -118,7 +104,6 @@
 		D364FE241EA5EBEC00ED702C /* SwiftPlaceholderTextView */ = {
 			isa = PBXGroup;
 			children = (
-				D364FE5A1EA60DD800ED702C /* SwiftUIUtilities */,
 				D364FE3C1EA5ED5300ED702C /* PlaceholderTextView.swift */,
 				D364FE3D1EA5ED5300ED702C /* PlaceholderTextView.xib */,
 				D364FE251EA5EBEC00ED702C /* SwiftPlaceholderTextView.h */,
@@ -134,64 +119,6 @@
 				D364FE321EA5EBEC00ED702C /* Info.plist */,
 			);
 			path = SwiftPlaceholderTextViewTests;
-			sourceTree = "<group>";
-		};
-		D364FE5A1EA60DD800ED702C /* SwiftUIUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				D364FE5B1EA60DD800ED702C /* Info.plist */,
-				D364FE5C1EA60DD800ED702C /* inputField */,
-				D364FE5F1EA60DD800ED702C /* model */,
-				D364FE611EA60DD800ED702C /* presenter */,
-				D364FE651EA60DD800ED702C /* scrollView */,
-				D364FE671EA60DD800ED702C /* SwiftUIUtilities.h */,
-				D364FE681EA60DD800ED702C /* view */,
-			);
-			name = SwiftUIUtilities;
-			path = ../../SwiftUIUtilities/SwiftUIUtilities;
-			sourceTree = "<group>";
-		};
-		D364FE5C1EA60DD800ED702C /* inputField */ = {
-			isa = PBXGroup;
-			children = (
-				D364FE5D1EA60DD800ED702C /* InputFieldType.swift */,
-				D364FE5E1EA60DD800ED702C /* UITextInputUtil.swift */,
-			);
-			path = inputField;
-			sourceTree = "<group>";
-		};
-		D364FE5F1EA60DD800ED702C /* model */ = {
-			isa = PBXGroup;
-			children = (
-				D364FE601EA60DD800ED702C /* Duration.swift */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		D364FE611EA60DD800ED702C /* presenter */ = {
-			isa = PBXGroup;
-			children = (
-				D364FE621EA60DD800ED702C /* ActionSelectorType.swift */,
-				D364FE631EA60DD800ED702C /* BasePresenter.swift */,
-				D364FE641EA60DD800ED702C /* UIViewPresenter.swift */,
-			);
-			path = presenter;
-			sourceTree = "<group>";
-		};
-		D364FE651EA60DD800ED702C /* scrollView */ = {
-			isa = PBXGroup;
-			children = (
-				D364FE661EA60DD800ED702C /* UIScrollViewUtil.swift */,
-			);
-			path = scrollView;
-			sourceTree = "<group>";
-		};
-		D364FE681EA60DD800ED702C /* view */ = {
-			isa = PBXGroup;
-			children = (
-				D364FE691EA60DD800ED702C /* UIViewUtil.swift */,
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		D95F7A223D9B0BC80960B046 /* Frameworks */ = {
@@ -211,7 +138,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D364FE331EA5EBEC00ED702C /* SwiftPlaceholderTextView.h in Headers */,
-				D364FE721EA60DD800ED702C /* SwiftUIUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +231,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D364FE6A1EA60DD800ED702C /* Info.plist in Resources */,
+				D3A66EA61EA87DCE00736FDD /* pod-publish.txt in Resources */,
+				D3A66EA71EA87DCE00736FDD /* SwiftPlaceholderTextView.podspec in Resources */,
 				D364FE3F1EA5ED5300ED702C /* PlaceholderTextView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,15 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D364FE6E1EA60DD800ED702C /* ActionSelectorType.swift in Sources */,
-				D364FE701EA60DD800ED702C /* UIViewPresenter.swift in Sources */,
-				D364FE6F1EA60DD800ED702C /* BasePresenter.swift in Sources */,
-				D364FE6C1EA60DD800ED702C /* UITextInputUtil.swift in Sources */,
-				D364FE731EA60DD800ED702C /* UIViewUtil.swift in Sources */,
 				D364FE3E1EA5ED5300ED702C /* PlaceholderTextView.swift in Sources */,
-				D364FE6B1EA60DD800ED702C /* InputFieldType.swift in Sources */,
-				D364FE6D1EA60DD800ED702C /* Duration.swift in Sources */,
-				D364FE711EA60DD800ED702C /* UIScrollViewUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +355,7 @@
 		D364FE341EA5EBEC00ED702C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -489,6 +409,7 @@
 		D364FE351EA5EBEC00ED702C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -579,7 +500,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8038ECA8C67AA333994142C0 /* Pods-SwiftPlaceholderTextViewTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = S3V9CCW695;
 				INFOPLIST_FILE = SwiftPlaceholderTextViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -593,7 +514,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BE8215BFA229310BF7CDFE1B /* Pods-SwiftPlaceholderTextViewTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = S3V9CCW695;
 				INFOPLIST_FILE = SwiftPlaceholderTextViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

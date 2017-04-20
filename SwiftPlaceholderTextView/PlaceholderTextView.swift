@@ -9,9 +9,10 @@
 import RxSwift
 import RxCocoa
 import SwiftUtilities
+import SwiftUIUtilities
 import UIKit
 
-public class PlaceholderTextView: UIView {
+public final class PlaceholderTextView: UIView {
     
     /// This UITextView is used for multi-line text edits. Usually it does
     /// not have a placeholder property.
@@ -46,19 +47,19 @@ public class PlaceholderTextView: UIView {
     /// Presenter for PlaceholderTextView
     fileprivate class Presenter: BaseViewPresenter {
         
-        /// Additional text change listener that can be chained to the main
-        /// text change listener. Default to Observable.empty().
-        fileprivate var textChangeListeners: [AnyObserver<String?>]
-        
         /// Dispose of subscribed Observables when deinit() is called.
         fileprivate let disposeBag: DisposeBag
         
         /// Set this to true once all subviews have been laid out.
         fileprivate lazy var initialized = false
         
+        /// Watch for backgroundColor to transfer to the first subview, since
+        /// we initialized this UIView with a Nib.
+        fileprivate let bgColorVariable: Variable<UIColor?>
+        
         fileprivate init(view: PlaceholderTextView) {
             disposeBag = DisposeBag()
-            textChangeListeners = []
+            bgColorVariable = Variable<UIColor?>(view.backgroundColor)
             super.init(view: view)
         }
         
@@ -94,14 +95,12 @@ public class PlaceholderTextView: UIView {
             textView.rx.text
                 .asObservable()
                 .doOnNext(textDidChange)
-                .doOnError({self.textDidChange(to: $0.localizedDescription)})
-                .flatMap({text in
-                    Observable.concat(
-                        self.rxTogglePlaceholder(whileCurrentTextIs: text),
-                        Observable.concat(self.textChangeListeners)
-                    )
-                })
-                .observeOn(MainScheduler.instance)
+                .subscribe()
+                .addDisposableTo(disposeBag)
+            
+            bgColorVariable
+                .asObservable()
+                .doOnNext({view.subviews.first?.backgroundColor = $0})
                 .subscribe()
                 .addDisposableTo(disposeBag)
         }
@@ -130,6 +129,23 @@ public class PlaceholderTextView: UIView {
 }
 
 extension PlaceholderTextView: InputFieldType {
+    
+    /// Set typealias to UITextView to access its rx extensions.
+    public typealias InputField = UITextView
+    
+    /// Return the text as displayed by textView.
+    @IBInspectable public var text: String? {
+        get { return textView?.text }
+        set { textView?.text = newValue }
+    }
+    
+    /// Return the text as dislayed by placeholderView. This text is used as
+    /// the placeholder.
+    @IBInspectable public var placeholder: String? {
+        get { return placeholderView?.text }
+        set { placeholderView?.text = newValue }
+    }
+    
     /// Override super tintColor to return placeholderView's tintColor.
     override public var tintColor: UIColor! {
         get { return placeholderView?.tintColor }
@@ -140,19 +156,6 @@ extension PlaceholderTextView: InputFieldType {
     public var textColor: UIColor? {
         get { return textView?.textColor }
         set { textView?.textColor = newValue }
-    }
-    
-    /// Return the text as displayed by textView.
-    public var text: String? {
-        get { return textView?.text }
-        set { textView?.text = newValue }
-    }
-    
-    /// Return the text as dislayed by placeholderView. This text is used as
-    /// the placeholder.
-    public var placeholder: String? {
-        get { return placeholderView?.text }
-        set { placeholderView?.text = newValue }
     }
     
     /// Return the textView's keyboard type.
@@ -173,6 +176,11 @@ extension PlaceholderTextView: InputFieldType {
     override public func resignFirstResponder() -> Bool {
         return textView?.resignFirstResponder() ?? false
     }
+    
+    /// Get UITextView reactive extension.
+    public var rx: Reactive<UITextView> {
+        return (textView ?? UITextView()).rx
+    }
 }
 
 fileprivate extension PlaceholderTextView.Presenter {
@@ -183,47 +191,21 @@ fileprivate extension PlaceholderTextView.Presenter {
     }
 }
 
-public extension PlaceholderTextView {
-    
-    /// Add an Observable text listener.
-    ///
-    /// - Parameter listener: An Observable instance.
-    public func addTextChangeListener(_ listener: AnyObserver<String?>) {
-        presenter.textChangeListeners.append(listener)
-    }
-}
-
 fileprivate extension PlaceholderTextView.Presenter {
-    
-    /// Toggle placeholder visibility, depending on the currently displayed
-    /// text. For e.g., if the current text is nil or empty, toggle placeholder
-    /// to be visible.
-    ///
-    /// - Parameter text: The currently displayed text.
-    /// - Returns: An Observable instance.
-    fileprivate func rxTogglePlaceholder(whileCurrentTextIs text: String?)
-        -> Observable<String?>
-    {
-        guard let placeholderView = view?.placeholderView else {
-            debugException()
-            return Observable.just(text)
-        }
-        
-        let source: Observable<Bool>
-        
-        if let text = text, text.isNotEmpty, placeholderView.alpha > 0 {
-            source = placeholderView.rxToggleVisible(toBe: false)
-        } else if text == nil || (text!.isEmpty && placeholderView.alpha < 1) {
-            source = placeholderView.rxToggleVisible(toBe: true)
-        } else {
-            source = Observable.just(true)
-        }
-        
-        return source.map({_ in text})
-    }
     
     /// This method will be called when the textView's text is changed.
     ///
     /// - Parameter text: The new text as displayed by the textView.
-    fileprivate func textDidChange(to text: String?) {}
+    fileprivate func textDidChange(to text: String?) {
+        guard let placeholderView = view?.placeholderView else {
+            debugException()
+            return
+        }
+        
+        if let text = text, text.isNotEmpty, placeholderView.alpha > 0 {
+            placeholderView.toggleVisible(toBe: false)
+        } else if text == nil || (text!.isEmpty && placeholderView.alpha < 1) {
+            placeholderView.toggleVisible(toBe: true)
+        }
+    }
 }

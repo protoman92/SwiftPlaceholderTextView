@@ -20,56 +20,57 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="placeholder" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNk-Z1-Ovg">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="placeholder" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNk-Z1-Ovg" customClass="BaseLabel" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
                     <rect key="frame" x="10" y="13" width="90.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="REGULAR"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="fontSize" value="TEXT_MID"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="1"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="fontSize" value="5"/>
                     </userDefinedRuntimeAttributes>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dHg-bm-Abf">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dHg-bm-Abf" customClass="BaseTextView">
                     <rect key="frame" x="5" y="5" width="370" height="662"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="REGULAR"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="fontSize" value="TEXT_MID"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="1"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="fontSize" value="5"/>
                     </userDefinedRuntimeAttributes>
                 </textView>
             </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
-                <constraint firstItem="dHg-bm-Abf" firstAttribute="top" secondItem="UPE-GM-4f8" secondAttribute="top" constant="5" id="HQa-42-ybK" customClass="CommonLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
+                <constraint firstItem="dHg-bm-Abf" firstAttribute="top" secondItem="UPE-GM-4f8" secondAttribute="top" constant="5" id="HQa-42-ybK" customClass="BaseLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="SPACE_SMALL"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="4"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="cNk-Z1-Ovg" firstAttribute="top" secondItem="dHg-bm-Abf" secondAttribute="top" constant="8" id="JEQ-1e-7Da" customClass="CommonLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
+                <constraint firstItem="cNk-Z1-Ovg" firstAttribute="top" secondItem="dHg-bm-Abf" secondAttribute="top" constant="8" id="JEQ-1e-7Da" customClass="BaseLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="SPACE_CUSTOM"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="-1"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="cNk-Z1-Ovg" firstAttribute="leading" secondItem="dHg-bm-Abf" secondAttribute="leading" constant="5" id="MWL-jw-7Mz" customClass="CommonLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
+                <constraint firstItem="cNk-Z1-Ovg" firstAttribute="leading" secondItem="dHg-bm-Abf" secondAttribute="leading" constant="5" id="MWL-jw-7Mz" customClass="BaseLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="SPACE_SMALL"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="4"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstAttribute="bottom" secondItem="dHg-bm-Abf" secondAttribute="bottom" id="YnB-Fp-mzd" customClass="CommonLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
+                <constraint firstAttribute="bottom" secondItem="dHg-bm-Abf" secondAttribute="bottom" id="YnB-Fp-mzd" customClass="BaseLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="SPACE_NONE"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="0"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="dHg-bm-Abf" firstAttribute="leading" secondItem="UPE-GM-4f8" secondAttribute="leading" constant="5" id="fRz-Lq-wAo" customClass="CommonLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
+                <constraint firstItem="dHg-bm-Abf" firstAttribute="leading" secondItem="UPE-GM-4f8" secondAttribute="leading" constant="5" id="fRz-Lq-wAo" customClass="BaseLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="SPACE_SMALL"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="4"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstAttribute="trailing" secondItem="dHg-bm-Abf" secondAttribute="trailing" id="le7-2a-tFM" customClass="CommonLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
+                <constraint firstAttribute="trailing" secondItem="dHg-bm-Abf" secondAttribute="trailing" id="le7-2a-tFM" customClass="BaseLayoutConstraint" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="SPACE_NONE"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="0"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
             </constraints>

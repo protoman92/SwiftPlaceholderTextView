@@ -6,7 +6,8 @@ target 'SwiftPlaceholderTextView' do
   use_frameworks!
 
   # Pods for SwiftPlaceholderTextView
-  pod 'SwiftUtilities'
+#  pod 'SwiftUtilities'
+  pod 'SwiftUIUtilities'
 
   target 'SwiftPlaceholderTextViewTests' do
     inherit! :search_paths
