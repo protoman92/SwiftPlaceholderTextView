@@ -238,7 +238,7 @@ fileprivate extension UIPlaceholderTextView.Presenter {
     }
 }
 
-public extension Reactive where Base: InputFieldType {
+public extension Reactive where Base: UIPlaceholderTextView {
     /// Add a text property to access textView's rx.text property.
     public var text: ControlProperty<String?> {
         guard let rxText = base.rxText else {
