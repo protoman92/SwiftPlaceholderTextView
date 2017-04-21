@@ -22,7 +22,7 @@ public final class PlaceholderTextView: UIView {
     @IBOutlet fileprivate weak var placeholderView: UILabel!
     
     /// Pass this to textView and placeholderTextView.
-    @IBInspectable public var fontName: Int? {
+    @IBInspectable public var fontName: String? {
         didSet {
             (textView as? DynamicFontType)?.fontName = fontName
             (placeholderView as? DynamicFontType)?.fontName = fontName
@@ -30,7 +30,7 @@ public final class PlaceholderTextView: UIView {
     }
     
     /// Pass this to textView and placeholderTextView.
-    @IBInspectable public var fontSize: Int? {
+    @IBInspectable public var fontSize: String? {
         didSet {
             (textView as? DynamicFontType)?.fontSize = fontSize
             (placeholderView as? DynamicFontType)?.fontSize = fontSize
@@ -144,7 +144,17 @@ public final class PlaceholderTextView: UIView {
     }
 }
 
-extension PlaceholderTextView: DynamicFontType {}
+extension PlaceholderTextView: DynamicFontType {
+    /// Pass this to textView and placeholderTextView.
+    public var activeFont: UIFont? {
+        get { return nil }
+        
+        set {
+            (textView as? DynamicFontType)?.activeFont = newValue
+            (placeholderView as? DynamicFontType)?.activeFont = newValue
+        }
+    }
+}
 
 extension PlaceholderTextView: ReactiveInputFieldType {
     
