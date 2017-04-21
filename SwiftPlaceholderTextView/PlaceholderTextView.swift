@@ -21,6 +21,22 @@ public final class PlaceholderTextView: UIView {
     /// This UILabel shall serve as the placeholder view for the UITextView.
     @IBOutlet fileprivate weak var placeholderView: UILabel!
     
+    /// Pass this to textView and placeholderTextView.
+    @IBInspectable public var fontName: Int? {
+        didSet {
+            (textView as? DynamicFontType)?.fontName = fontName
+            (placeholderView as? DynamicFontType)?.fontName = fontName
+        }
+    }
+    
+    /// Pass this to textView and placeholderTextView.
+    @IBInspectable public var fontSize: Int? {
+        didSet {
+            (textView as? DynamicFontType)?.fontSize = fontSize
+            (placeholderView as? DynamicFontType)?.fontSize = fontSize
+        }
+    }
+    
     /// Lazy presenter initialization.
     fileprivate lazy var presenter: Presenter = Presenter(view: self)
     
@@ -127,6 +143,8 @@ public final class PlaceholderTextView: UIView {
         }
     }
 }
+
+extension PlaceholderTextView: DynamicFontType {}
 
 extension PlaceholderTextView: ReactiveInputFieldType {
     
