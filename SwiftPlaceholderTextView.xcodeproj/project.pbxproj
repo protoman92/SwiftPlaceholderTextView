@@ -12,8 +12,8 @@
 		D364FE2C1EA5EBEC00ED702C /* SwiftPlaceholderTextView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D364FE221EA5EBEC00ED702C /* SwiftPlaceholderTextView.framework */; };
 		D364FE311EA5EBEC00ED702C /* SwiftPlaceholderTextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364FE301EA5EBEC00ED702C /* SwiftPlaceholderTextViewTests.swift */; };
 		D364FE331EA5EBEC00ED702C /* SwiftPlaceholderTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = D364FE251EA5EBEC00ED702C /* SwiftPlaceholderTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D364FE3E1EA5ED5300ED702C /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364FE3C1EA5ED5300ED702C /* PlaceholderTextView.swift */; };
-		D364FE3F1EA5ED5300ED702C /* PlaceholderTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D364FE3D1EA5ED5300ED702C /* PlaceholderTextView.xib */; };
+		D364FE3E1EA5ED5300ED702C /* UIPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364FE3C1EA5ED5300ED702C /* UIPlaceholderTextView.swift */; };
+		D364FE3F1EA5ED5300ED702C /* UIPlaceholderTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D364FE3D1EA5ED5300ED702C /* UIPlaceholderTextView.xib */; };
 		D3A66EA61EA87DCE00736FDD /* pod-publish.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3A66EA41EA87DCE00736FDD /* pod-publish.txt */; };
 		D3A66EA71EA87DCE00736FDD /* SwiftPlaceholderTextView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D3A66EA51EA87DCE00736FDD /* SwiftPlaceholderTextView.podspec */; };
 /* End PBXBuildFile section */
@@ -40,8 +40,8 @@
 		D364FE2B1EA5EBEC00ED702C /* SwiftPlaceholderTextViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftPlaceholderTextViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D364FE301EA5EBEC00ED702C /* SwiftPlaceholderTextViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPlaceholderTextViewTests.swift; sourceTree = "<group>"; };
 		D364FE321EA5EBEC00ED702C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D364FE3C1EA5ED5300ED702C /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
-		D364FE3D1EA5ED5300ED702C /* PlaceholderTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderTextView.xib; sourceTree = "<group>"; };
+		D364FE3C1EA5ED5300ED702C /* UIPlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPlaceholderTextView.swift; sourceTree = "<group>"; };
+		D364FE3D1EA5ED5300ED702C /* UIPlaceholderTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIPlaceholderTextView.xib; sourceTree = "<group>"; };
 		D3A66EA41EA87DCE00736FDD /* pod-publish.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pod-publish.txt"; sourceTree = "<group>"; };
 		D3A66EA51EA87DCE00736FDD /* SwiftPlaceholderTextView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftPlaceholderTextView.podspec; sourceTree = "<group>"; };
 		DA2DD4438E4C648E9C7435DB /* Pods-SwiftPlaceholderTextView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPlaceholderTextView.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftPlaceholderTextView/Pods-SwiftPlaceholderTextView.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,8 +104,8 @@
 		D364FE241EA5EBEC00ED702C /* SwiftPlaceholderTextView */ = {
 			isa = PBXGroup;
 			children = (
-				D364FE3C1EA5ED5300ED702C /* PlaceholderTextView.swift */,
-				D364FE3D1EA5ED5300ED702C /* PlaceholderTextView.xib */,
+				D364FE3C1EA5ED5300ED702C /* UIPlaceholderTextView.swift */,
+				D364FE3D1EA5ED5300ED702C /* UIPlaceholderTextView.xib */,
 				D364FE251EA5EBEC00ED702C /* SwiftPlaceholderTextView.h */,
 				D364FE261EA5EBEC00ED702C /* Info.plist */,
 			);
@@ -233,7 +233,7 @@
 			files = (
 				D3A66EA61EA87DCE00736FDD /* pod-publish.txt in Resources */,
 				D3A66EA71EA87DCE00736FDD /* SwiftPlaceholderTextView.podspec in Resources */,
-				D364FE3F1EA5ED5300ED702C /* PlaceholderTextView.xib in Resources */,
+				D364FE3F1EA5ED5300ED702C /* UIPlaceholderTextView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D364FE3E1EA5ED5300ED702C /* PlaceholderTextView.swift in Sources */,
+				D364FE3E1EA5ED5300ED702C /* UIPlaceholderTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

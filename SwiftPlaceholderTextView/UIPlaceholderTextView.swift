@@ -1,5 +1,5 @@
 //
-//  PlaceholderTextView.swift
+//  UIPlaceholderTextView.swift
 //  Heartland Chefs
 //
 //  Created by Hai Pham on 10/11/16.
@@ -12,7 +12,7 @@ import SwiftUtilities
 import SwiftUIUtilities
 import UIKit
 
-public final class PlaceholderTextView: UIView {
+public final class UIPlaceholderTextView: UIView {
     
     /// This UITextView is used for multi-line text edits. Usually it does
     /// not have a placeholder property.
@@ -21,7 +21,7 @@ public final class PlaceholderTextView: UIView {
     /// This UILabel shall serve as the placeholder view for the UITextView.
     @IBOutlet fileprivate weak var placeholderView: UILabel!
     
-    /// Pass this to textView and placeholderTextView.
+    /// Pass this to textView and placeholderView.
     @IBInspectable public var fontName: String? {
         didSet {
             (textView as? DynamicFontType)?.fontName = fontName
@@ -29,7 +29,7 @@ public final class PlaceholderTextView: UIView {
         }
     }
     
-    /// Pass this to textView and placeholderTextView.
+    /// Pass this to textView and placeholderView.
     @IBInspectable public var fontSize: String? {
         didSet {
             (textView as? DynamicFontType)?.fontSize = fontSize
@@ -60,7 +60,7 @@ public final class PlaceholderTextView: UIView {
         presenter.layoutSubviews(self)
     }
     
-    /// Presenter for PlaceholderTextView
+    /// Presenter for UIPlaceholderTextView
     fileprivate class Presenter: BaseViewPresenter {
         
         /// Dispose of subscribed Observables when deinit() is called.
@@ -73,7 +73,7 @@ public final class PlaceholderTextView: UIView {
         /// we initialized this UIView with a Nib.
         fileprivate let bgColorVariable: Variable<UIColor?>
         
-        fileprivate init(view: PlaceholderTextView) {
+        fileprivate init(view: UIPlaceholderTextView) {
             disposeBag = DisposeBag()
             bgColorVariable = Variable<UIColor?>(view.backgroundColor)
             super.init(view: view)
@@ -89,7 +89,7 @@ public final class PlaceholderTextView: UIView {
             
             guard
                 !initialized,
-                let view = view as? PlaceholderTextView,
+                let view = view as? UIPlaceholderTextView,
                 let textView = view.textView,
                 let placeholderView = view.placeholderView
             else {
@@ -144,8 +144,8 @@ public final class PlaceholderTextView: UIView {
     }
 }
 
-extension PlaceholderTextView: DynamicFontType {
-    /// Pass this to textView and placeholderTextView.
+extension UIPlaceholderTextView: DynamicFontType {
+    /// Pass this to textView and placeholderView.
     public var activeFont: UIFont? {
         get { return nil }
         
@@ -156,7 +156,7 @@ extension PlaceholderTextView: DynamicFontType {
     }
 }
 
-extension PlaceholderTextView: ReactiveInputFieldType {
+extension UIPlaceholderTextView: InputFieldType {
     
     /// Set typealias to UITextView to access its rx extensions.
     public typealias InputField = UITextView
@@ -205,21 +205,21 @@ extension PlaceholderTextView: ReactiveInputFieldType {
         return textView?.resignFirstResponder() ?? false
     }
     
-    /// Get UITextView reactive extension.
-    public var rx: Reactive<UITextView> {
-        return (textView ?? UITextView()).rx
+    /// Get textView's rx.text property.
+    public var rxText: ControlProperty<String?>? {
+        return textView?.rx.text
     }
 }
 
-fileprivate extension PlaceholderTextView.Presenter {
+fileprivate extension UIPlaceholderTextView.Presenter {
     
     /// Optionally cast viewDelegate to the current UIView subclass.
-    var view: PlaceholderTextView? {
-        return viewDelegate as? PlaceholderTextView
+    var view: UIPlaceholderTextView? {
+        return viewDelegate as? UIPlaceholderTextView
     }
 }
 
-fileprivate extension PlaceholderTextView.Presenter {
+fileprivate extension UIPlaceholderTextView.Presenter {
     
     /// This method will be called when the textView's text is changed.
     ///
@@ -235,5 +235,16 @@ fileprivate extension PlaceholderTextView.Presenter {
         } else if text == nil || (text!.isEmpty && placeholderView.alpha < 1) {
             placeholderView.toggleVisible(toBe: true)
         }
+    }
+}
+
+public extension Reactive where Base: InputFieldType {
+    /// Add a text property to access textView's rx.text property.
+    public var text: ControlProperty<String?> {
+        guard let rxText = base.rxText else {
+            fatalError()
+        }
+        
+        return rxText
     }
 }

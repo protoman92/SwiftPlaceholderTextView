@@ -6,10 +6,10 @@ PODS:
   - RxSwift (3.4.0)
   - RxTest (3.4.0):
     - RxSwift (~> 3.4)
-  - SwiftUIUtilities (1.1.2):
-    - SwiftUIUtilities/Main (= 1.1.2)
+  - SwiftUIUtilities (1.1.4):
+    - SwiftUIUtilities/Main (= 1.1.4)
     - SwiftUtilities/Main
-  - SwiftUIUtilities/Main (1.1.2):
+  - SwiftUIUtilities/Main (1.1.4):
     - SwiftUtilities/Main
   - SwiftUtilities/Main (1.2.5):
     - RxCocoa (~> 3.0)
@@ -35,7 +35,7 @@ SPEC CHECKSUMS:
   RxCocoa: d14ef6b6029e1ddc6e966508c09289090de68ff9
   RxSwift: 3789a1af753002a14edecdb698a2424624296a9c
   RxTest: beb6beb882cf1dcac5fc9fdbd4760a5254e7f3a6
-  SwiftUIUtilities: 59b76771d0a983698dc5c19dd9e841a99c2d1eeb
+  SwiftUIUtilities: d51e7764d50a394ddb08db3bdb19d0e1d51f7de6
   SwiftUtilities: 093173ad1d2a3430ee3bc73bdd1a5236833c3cae
   SwiftUtilitiesTests: 569fd3efc990302eb5bcb3e817bc5cf4f2156d76
 
