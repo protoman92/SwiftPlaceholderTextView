@@ -128,7 +128,7 @@ public final class PlaceholderTextView: UIView {
     }
 }
 
-extension PlaceholderTextView: InputFieldType {
+extension PlaceholderTextView: ReactiveInputFieldType {
     
     /// Set typealias to UITextView to access its rx extensions.
     public typealias InputField = UITextView
