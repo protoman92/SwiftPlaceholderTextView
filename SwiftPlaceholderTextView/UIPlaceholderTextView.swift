@@ -174,10 +174,16 @@ extension UIPlaceholderTextView: InputFieldType {
         set { placeholderView?.text = newValue }
     }
     
+    /// Set placeholderView's textColor property.
+    public var placeholderTextColor: UIColor? {
+        get { return placeholderView?.textColor }
+        set { placeholderView?.textColor = newValue }
+    }
+    
     /// Override super tintColor to return placeholderView's tintColor.
     override public var tintColor: UIColor! {
-        get { return placeholderView?.tintColor }
-        set { placeholderView?.tintColor = newValue }
+        get { return textView?.tintColor }
+        set { textView?.tintColor = newValue }
     }
     
     /// Return the textView's textColor.
