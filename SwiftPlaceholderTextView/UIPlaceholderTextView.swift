@@ -98,14 +98,20 @@ public final class UIPlaceholderTextView: UIView {
             
             defer { initialized = true }
             
-            let accessory = CompletionAccessory.builder()
+            // We need to use a UIEdgeInsets to remove the UITextView's
+            // padding. Otherwise, its text will not align vertically with
+            // other input views.
+            textView.contentInset = UIEdgeInsets(top: 0,
+                                                 left: -4,
+                                                 bottom: 0,
+                                                 right: -4)
+            
+            textView.addAccessory(CompletionAccessory.builder()
                 .with(target: self)
                 .with(selectorType: self)
                 .with(confirmId: "confirm")
                 .with(cancelId: "cancel")
-                .build()
-            
-            textView.addAccessory(accessory)
+                .build())
             
             // Listen to text change events.
             textView.rx.text
