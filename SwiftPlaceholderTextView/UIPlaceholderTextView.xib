@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="placeholder" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNk-Z1-Ovg" customClass="BaseLabel" customModule="SwiftUIUtilities">
-                    <rect key="frame" x="0.0" y="13" width="90.5" height="20.5"/>
+                    <rect key="frame" x="0.0" y="13" width="375" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -69,6 +69,11 @@
                     </userDefinedRuntimeAttributes>
                 </constraint>
                 <constraint firstAttribute="trailing" secondItem="dHg-bm-Abf" secondAttribute="trailing" id="le7-2a-tFM" customClass="BaseLayoutConstraint" customModule="SwiftUIUtilities">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="0"/>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="cNk-Z1-Ovg" firstAttribute="trailing" secondItem="dHg-bm-Abf" secondAttribute="trailing" id="o0x-RF-DSu" customClass="BaseLayoutConstraint" customModule="SwiftUIUtilities">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="0"/>
                     </userDefinedRuntimeAttributes>
