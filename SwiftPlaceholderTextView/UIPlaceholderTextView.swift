@@ -201,6 +201,12 @@ extension UIPlaceholderTextView: InputFieldType {
         }
     }
     
+    /// When we set autocorrectionType, pass it to textView.
+    public var autocorrectionType: UITextAutocorrectionType {
+        get { return textView?.autocorrectionType ?? .default }
+        set { textView?.autocorrectionType = newValue }
+    }
+    
     /// Override super tintColor to return placeholderLabel's tintColor.
     override public var tintColor: UIColor! {
         get { return textView?.tintColor }
