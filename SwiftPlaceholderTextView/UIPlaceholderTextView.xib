@@ -9,14 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaceholderTextView" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIPlaceholderTextView" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
             <connections>
-                <outlet property="placeholderView" destination="cNk-Z1-Ovg" id="nFI-Ed-SPV"/>
+                <outlet property="placeholderLabel" destination="cNk-Z1-Ovg" id="ZyM-TO-sdc"/>
                 <outlet property="textView" destination="dHg-bm-Abf" id="Ldk-Np-VsE"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="UPE-GM-4f8" customClass="PlaceholderTextView" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="UPE-GM-4f8" customClass="UIPlaceholderTextView" customModule="SwiftPlaceholderTextView" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>

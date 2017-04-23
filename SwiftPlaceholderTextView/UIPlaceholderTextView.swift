@@ -16,29 +16,29 @@ public final class UIPlaceholderTextView: UIView {
     
     /// This UITextView is used for multi-line text edits. Usually it does
     /// not have a placeholder property.
-    @IBOutlet fileprivate weak var textView: UITextView!
+    @IBOutlet weak var textView: UITextView!
     
     /// This UILabel shall serve as the placeholder view for the UITextView.
-    @IBOutlet fileprivate weak var placeholderView: UILabel!
+    @IBOutlet weak var placeholderLabel: UILabel!
     
-    /// Pass this to textView and placeholderView.
+    /// Pass this to textView and placeholderLabel.
     @IBInspectable public var fontName: String? {
         didSet {
             (textView as? DynamicFontType)?.fontName = fontName
-            (placeholderView as? DynamicFontType)?.fontName = fontName
+            (placeholderLabel as? DynamicFontType)?.fontName = fontName
         }
     }
     
-    /// Pass this to textView and placeholderView.
+    /// Pass this to textView and placeholderLabel.
     @IBInspectable public var fontSize: String? {
         didSet {
             (textView as? DynamicFontType)?.fontSize = fontSize
-            (placeholderView as? DynamicFontType)?.fontSize = fontSize
+            (placeholderLabel as? DynamicFontType)?.fontSize = fontSize
         }
     }
     
     /// Lazy presenter initialization.
-    fileprivate lazy var presenter: Presenter = Presenter(view: self)
+    lazy var presenter: Presenter = Presenter(view: self)
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -61,7 +61,7 @@ public final class UIPlaceholderTextView: UIView {
     }
     
     /// Presenter for UIPlaceholderTextView
-    fileprivate class Presenter: BaseViewPresenter {
+    class Presenter: BaseViewPresenter {
         
         /// Dispose of subscribed Observables when deinit() is called.
         fileprivate let disposeBag: DisposeBag
@@ -91,7 +91,7 @@ public final class UIPlaceholderTextView: UIView {
                 !initialized,
                 let view = view as? UIPlaceholderTextView,
                 let textView = view.textView,
-                let placeholderView = view.placeholderView
+                let placeholderLabel = view.placeholderLabel
             else {
                 return
             }
@@ -151,13 +151,13 @@ public final class UIPlaceholderTextView: UIView {
 }
 
 extension UIPlaceholderTextView: DynamicFontType {
-    /// Pass this to textView and placeholderView.
+    /// Pass this to textView and placeholderLabel.
     public var activeFont: UIFont? {
         get { return nil }
         
         set {
             (textView as? DynamicFontType)?.activeFont = newValue
-            (placeholderView as? DynamicFontType)?.activeFont = newValue
+            (placeholderLabel as? DynamicFontType)?.activeFont = newValue
         }
     }
 }
@@ -173,20 +173,24 @@ extension UIPlaceholderTextView: InputFieldType {
         set { textView?.text = newValue }
     }
     
-    /// Return the text as dislayed by placeholderView. This text is used as
+    /// Return the text as dislayed by placeholderLabel. This text is used as
     /// the placeholder.
     @IBInspectable public var placeholder: String? {
-        get { return placeholderView?.text }
-        set { placeholderView?.text = newValue }
+        get { return placeholderLabel?.text }
+        set { placeholderLabel?.text = newValue }
     }
     
-    /// Set placeholderView's textColor property.
+    /// Set placeholderLabel's textColor property.
     public var placeholderTextColor: UIColor? {
-        get { return placeholderView?.textColor }
-        set { placeholderView?.textColor = newValue }
+        get { return placeholderLabel?.textColor }
+        set { placeholderLabel?.textColor = newValue }
     }
     
-    /// Override super tintColor to return placeholderView's tintColor.
+    public var placeholderView: UIView? {
+        return placeholderLabel
+    }
+    
+    /// Override super tintColor to return placeholderLabel's tintColor.
     override public var tintColor: UIColor! {
         get { return textView?.tintColor }
         set { textView?.tintColor = newValue }
@@ -237,15 +241,15 @@ fileprivate extension UIPlaceholderTextView.Presenter {
     ///
     /// - Parameter text: The new text as displayed by the textView.
     fileprivate func textDidChange(to text: String?) {
-        guard let placeholderView = view?.placeholderView else {
+        guard let placeholderLabel = view?.placeholderLabel else {
             debugException()
             return
         }
         
-        if let text = text, text.isNotEmpty, placeholderView.alpha > 0 {
-            placeholderView.toggleVisible(toBe: false)
-        } else if text == nil || (text!.isEmpty && placeholderView.alpha < 1) {
-            placeholderView.toggleVisible(toBe: true)
+        if let text = text, text.isNotEmpty, placeholderLabel.alpha > 0 {
+            placeholderLabel.toggleVisible(toBe: false)
+        } else if text == nil || (text!.isEmpty && placeholderLabel.alpha < 1) {
+            placeholderLabel.toggleVisible(toBe: true)
         }
     }
 }
