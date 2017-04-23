@@ -15,13 +15,15 @@ import SwiftUtilitiesTests
 import XCTest
 
 class UIplaceholderLabelTests: XCTestCase {
-    var placeholderTextView: UIPlaceholderTextView!
+    fileprivate let expectationTimeout: TimeInterval = 10
     
-    var textView: UITextView! {
+    fileprivate var placeholderTextView: UIPlaceholderTextView!
+    
+    fileprivate var textView: UITextView! {
         return placeholderTextView.textView
     }
     
-    var placeholderLabel: UILabel! {
+    fileprivate var placeholderLabel: UILabel! {
         return placeholderTextView.placeholderLabel
     }
     
@@ -30,6 +32,27 @@ class UIplaceholderLabelTests: XCTestCase {
         placeholderTextView = UIPlaceholderTextView()
         placeholderTextView.awakeFromNib()
         placeholderTextView.layoutSubviews()
+    }
+    
+    fileprivate func createInputs() -> [String] {
+        var inputs = [String]()
+        
+        for i in 0..<1000 {
+            let text: String
+            
+            // We need to do this to avoid two repeating inputs, since
+            // rx.text does not emit value if it receives the same String
+            // input.
+            if i > 0 && inputs[i - 1].isNotEmpty && Bool.random() {
+                text = ""
+            } else {
+                text = "\(String.random(withLength: 5))-\(i)"
+            }
+            
+            inputs.append(text)
+        }
+        
+        return inputs
     }
     
     func test_subviews_shouldBeOfCorrectType() {
@@ -60,30 +83,67 @@ class UIplaceholderLabelTests: XCTestCase {
         XCTAssertEqual(placeholderLabel.fontSize!, fontSize)
     }
     
-//    func test_textObservable_shouldWorkCorrectly() {
-//        // Setup
-//        let scheduler = TestScheduler(initialClock: 0)
-//        let observer = scheduler.createObserver(String.self)
-//        let disposeBag = DisposeBag()
-//        let inputs = (0..<1).map(String.init)
-//        
-//        // When
-//        placeholderTextView.rx.text
-//            .asObservable()
-//            .throttle(0.1, scheduler: MainScheduler.instance)
-//            .logNext()
-//            .map({$0 ?? ""})
-//            .observeOn(MainScheduler.instance)
-//            .subscribe(observer)
-//            .addDisposableTo(disposeBag)
-//        
-//        inputs.forEach({input in
-//            synchronized(textView) { textView.text = input }
-//        })
-//        
-//        // Then
-//        let events = observer.events
-//        let nextEvents = events.flatMap({$0.value.element})
-//        XCTAssertEqual(nextEvents, inputs)
-//    }
+    func test_textObservable_shouldWorkCorrectly() {
+        // Setup
+        let scheduler = TestScheduler(initialClock: 0)
+        let observer = scheduler.createObserver(String.self)
+        let disposeBag = DisposeBag()
+        let inputs = createInputs()
+        var mutableInputs = inputs
+        let expect = expectation(description: "Should have worked")
+        
+        // When
+        placeholderTextView.rx.text
+            .asObservable()
+            .map({$0 ?? ""})
+            .skip(1) // Skip 1 to skip empty string emission.
+            .take(inputs.count)
+            .doOnNext({_ in
+                if mutableInputs.isNotEmpty {
+                    self.textView.text = mutableInputs.removeFirst()
+                }
+            })
+            .doOnDispose(expect.fulfill)
+            .subscribe(observer)
+            .addDisposableTo(disposeBag)
+        
+        textView.text = mutableInputs.removeFirst()
+        waitForExpectations(timeout: expectationTimeout, handler: nil)
+        
+        // Then
+        XCTAssertEqual(observer.nextElements(), inputs)
+    }
+    
+    func test_textChange_shouldInfluencePlaceholder() {
+        // Setup
+        let scheduler = TestScheduler(initialClock: 0)
+        let observer = scheduler.createObserver(String.self)
+        let disposeBag = DisposeBag()
+        let inputs = createInputs()
+        var mutableInputs = inputs
+        let expect = expectation(description: "Should have worked")
+        
+        // When
+        placeholderTextView.rx.text
+            .asObservable()
+            .map({$0 ?? ""})
+            .skip(1) // Skip 1 to skip empty string emission.
+            .take(inputs.count)
+            .doOnNext({
+                // Then
+                let alpha = self.placeholderLabel.alpha
+                XCTAssertEqual(alpha, $0.isEmpty ? 1 : 0)
+            })
+            .doOnNext({_ in
+                if mutableInputs.isNotEmpty {
+                    self.textView.text = mutableInputs.removeFirst()
+                }
+            })
+            .doOnDispose(expect.fulfill)
+            .subscribe(observer)
+            .addDisposableTo(disposeBag)
+        
+        textView.text = mutableInputs.removeFirst()
+        waitForExpectations(timeout: expectationTimeout, handler: nil)
+    }
 }

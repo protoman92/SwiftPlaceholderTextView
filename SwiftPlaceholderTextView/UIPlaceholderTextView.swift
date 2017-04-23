@@ -12,6 +12,7 @@ import SwiftUtilities
 import SwiftUIUtilities
 import UIKit
 
+/// This text input class provides placeholder support for UITextView.
 public final class UIPlaceholderTextView: UIView {
     
     /// This UITextView is used for multi-line text edits. Usually it does
