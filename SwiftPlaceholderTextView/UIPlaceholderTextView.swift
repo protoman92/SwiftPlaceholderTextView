@@ -190,6 +190,17 @@ extension UIPlaceholderTextView: InputFieldType {
         return placeholderLabel
     }
     
+    /// When we set textAlignment, pass it to both textView and 
+    /// placeholderLabel.
+    public var textAlignment: NSTextAlignment {
+        get { return textView?.textAlignment ?? .left }
+        
+        set {
+            textView?.textAlignment = newValue
+            placeholderLabel?.textAlignment = newValue
+        }
+    }
+    
     /// Override super tintColor to return placeholderLabel's tintColor.
     override public var tintColor: UIColor! {
         get { return textView?.tintColor }
