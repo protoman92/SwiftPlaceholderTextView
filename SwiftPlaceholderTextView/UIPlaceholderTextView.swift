@@ -1,6 +1,6 @@
 //
 //  UIPlaceholderTextView.swift
-//  Heartland Chefs
+//  SwiftPlaceholderTextView
 //
 //  Created by Hai Pham on 10/11/16.
 //  Copyright © 2016 Swiften. All rights reserved.
@@ -93,8 +93,8 @@ public final class UIPlaceholderTextView: UIView {
                 let view = view as? UIPlaceholderTextView,
                 let textView = view.textView,
                 let placeholderLabel = view.placeholderLabel
-            else {
-                return
+                else {
+                    return
             }
             
             defer { initialized = true }
@@ -117,13 +117,17 @@ public final class UIPlaceholderTextView: UIView {
             // Listen to text change events.
             textView.rx.text
                 .asObservable()
-                .doOnNext(textDidChange)
+                .doOnNext({[weak self, weak view] in
+                    self?.textDidChange(to: $0, with: view)
+                })
                 .subscribe()
                 .addDisposableTo(disposeBag)
             
             bgColorVariable
                 .asObservable()
-                .doOnNext({view.subviews.first?.backgroundColor = $0})
+                .doOnNext({[weak view] in
+                    view?.subviews.first?.backgroundColor = $0
+                })
                 .subscribe()
                 .addDisposableTo(disposeBag)
         }
@@ -191,7 +195,7 @@ extension UIPlaceholderTextView: InputFieldType {
         return placeholderLabel
     }
     
-    /// When we set textAlignment, pass it to both textView and 
+    /// When we set textAlignment, pass it to both textView and
     /// placeholderLabel.
     public var textAlignment: NSTextAlignment {
         get { return textView?.textAlignment ?? .left }
@@ -258,7 +262,8 @@ fileprivate extension UIPlaceholderTextView.Presenter {
     /// This method will be called when the textView's text is changed.
     ///
     /// - Parameter text: The new text as displayed by the textView.
-    fileprivate func textDidChange(to text: String?) {
+    fileprivate func textDidChange(to text: String?,
+                                   with view: UIPlaceholderTextView?) {
         guard let placeholderLabel = view?.placeholderLabel else {
             debugException()
             return
