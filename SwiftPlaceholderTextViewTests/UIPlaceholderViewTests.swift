@@ -98,6 +98,7 @@ class UIplaceholderLabelTests: XCTestCase {
             .map({$0 ?? ""})
             .skip(1) // Skip 1 to skip empty string emission.
             .take(inputs.count)
+            .logNext()
             .doOnNext({_ in
                 if mutableInputs.isNotEmpty {
                     self.textView.text = mutableInputs.removeFirst()
@@ -107,7 +108,7 @@ class UIplaceholderLabelTests: XCTestCase {
             .subscribe(observer)
             .addDisposableTo(disposeBag)
         
-        textView.text = mutableInputs.removeFirst()
+        placeholderTextView.text = mutableInputs.removeFirst()
         waitForExpectations(timeout: expectationTimeout, handler: nil)
         
         // Then

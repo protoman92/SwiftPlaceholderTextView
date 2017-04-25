@@ -244,8 +244,8 @@ extension UIPlaceholderTextView: InputFieldType {
     }
     
     /// Get textView's rx.text property.
-    public var rxText: ControlProperty<String?>? {
-        return textView?.rx.text
+    public var rxText: Observable<String?>? {
+        return textView?.rx.text.asObservable()
     }
 }
 
@@ -279,7 +279,7 @@ fileprivate extension UIPlaceholderTextView.Presenter {
 
 public extension Reactive where Base: UIPlaceholderTextView {
     /// Add a text property to access textView's rx.text property.
-    public var text: ControlProperty<String?> {
+    public var text: Observable<String?> {
         guard let rxText = base.rxText else {
             fatalError()
         }
