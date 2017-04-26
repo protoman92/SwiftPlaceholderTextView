@@ -61,16 +61,16 @@ class UIplaceholderLabelTests: XCTestCase {
         // When
         
         // Then
-        XCTAssertTrue(textView is BaseTextView)
-        XCTAssertTrue(placeholderLabel is BaseLabel)
+        XCTAssertTrue(textView is UIBaseTextView)
+        XCTAssertTrue(placeholderLabel is UIBaseLabel)
     }
     
     func test_dynamicFontType_shouldWorkCorrectly() {
         // Setup
         let fontName = String(describing: 1)
         let fontSize = String(describing: 2)
-        let textView = self.textView as! BaseTextView
-        let placeholderLabel = self.placeholderLabel as! BaseLabel
+        let textView = self.textView as! UIBaseTextView
+        let placeholderLabel = self.placeholderLabel as! UIBaseLabel
         
         // When
         placeholderTextView.fontName = fontName
