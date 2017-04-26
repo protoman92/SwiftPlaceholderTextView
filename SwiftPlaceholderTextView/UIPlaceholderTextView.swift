@@ -65,16 +65,16 @@ public final class UIPlaceholderTextView: UIView {
     class Presenter: BaseViewPresenter {
         
         /// Dispose of subscribed Observables when deinit() is called.
-        fileprivate let disposeBag: DisposeBag
+        let disposeBag: DisposeBag
         
         /// Set this to true once all subviews have been laid out.
-        fileprivate lazy var initialized = false
+        lazy var initialized = false
         
         /// Watch for backgroundColor to transfer to the first subview, since
         /// we initialized this UIView with a Nib.
-        fileprivate let bgColorVariable: Variable<UIColor?>
+        let bgColorVariable: Variable<UIColor?>
         
-        fileprivate init(view: UIPlaceholderTextView) {
+        init(view: UIPlaceholderTextView) {
             disposeBag = DisposeBag()
             bgColorVariable = Variable<UIColor?>(view.backgroundColor)
             super.init(view: view)
@@ -191,8 +191,20 @@ extension UIPlaceholderTextView: InputFieldType {
         set { placeholderLabel?.textColor = newValue }
     }
     
+    /// Return the placeholderLabel.
     public var placeholderView: UIView? {
         return placeholderLabel
+    }
+    
+    /// When font is set, pass it to both textView and placeholderLabel.
+    /// However the getter only accesses textView's font.
+    public var font: UIFont? {
+        get { return textView?.font }
+        
+        set {
+            textView?.font = font
+            placeholderLabel?.font = font
+        }
     }
     
     /// When we set textAlignment, pass it to both textView and
@@ -249,7 +261,7 @@ extension UIPlaceholderTextView: InputFieldType {
     }
 }
 
-fileprivate extension UIPlaceholderTextView.Presenter {
+extension UIPlaceholderTextView.Presenter {
     
     /// Optionally cast viewDelegate to the current UIView subclass.
     var view: UIPlaceholderTextView? {
@@ -257,13 +269,12 @@ fileprivate extension UIPlaceholderTextView.Presenter {
     }
 }
 
-fileprivate extension UIPlaceholderTextView.Presenter {
+extension UIPlaceholderTextView.Presenter {
     
     /// This method will be called when the textView's text is changed.
     ///
     /// - Parameter text: The new text as displayed by the textView.
-    fileprivate func textDidChange(to text: String?,
-                                   with view: UIPlaceholderTextView?) {
+    func textDidChange(to text: String?, with view: UIPlaceholderTextView?) {
         guard let placeholderLabel = view?.placeholderLabel else {
             debugException()
             return
