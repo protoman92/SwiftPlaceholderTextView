@@ -53,19 +53,19 @@ public final class UIPlaceholderTextView: UIView {
     
     override public func awakeFromNib() {
         super.awakeFromNib()
-        presenter.awakeFromNib(self)
+        presenter.awakeFromNib(for: self)
     }
     
     override public func layoutSubviews() {
         super.layoutSubviews()
-        presenter.layoutSubviews(self)
+        presenter.layoutSubviews(for: self)
     }
     
     /// Presenter for UIPlaceholderTextView
     class Presenter: BaseViewPresenter {
         
         /// Dispose of subscribed Observables when deinit() is called.
-        let disposeBag: DisposeBag
+        let disposeBag = DisposeBag()
         
         /// Set this to true once all subviews have been laid out.
         lazy var initialized = false
@@ -75,18 +75,17 @@ public final class UIPlaceholderTextView: UIView {
         let bgColorVariable: Variable<UIColor?>
         
         init(view: UIPlaceholderTextView) {
-            disposeBag = DisposeBag()
             bgColorVariable = Variable<UIColor?>(view.backgroundColor)
             super.init(view: view)
         }
         
-        override func awakeFromNib(_ view: UIView) {
-            super.awakeFromNib(view)
+        override func awakeFromNib(for view: UIView) {
+            super.awakeFromNib(for: view)
             view.backgroundColor = .clear
         }
         
-        override func layoutSubviews(_ view: UIView) {
-            super.layoutSubviews(view)
+        override func layoutSubviews(for view: UIView) {
+            super.layoutSubviews(for: view)
             
             guard
                 !initialized,
