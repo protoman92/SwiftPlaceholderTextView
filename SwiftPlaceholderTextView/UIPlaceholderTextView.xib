@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="placeholder" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNk-Z1-Ovg" customClass="UIBaseLabel" customModule="SwiftUIUtilities">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="placeholder" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNk-Z1-Ovg" customClass="UIBaseLabel" customModule="SwiftBaseViews">
                     <rect key="frame" x="0.0" y="13" width="375" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -30,7 +30,7 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="fontSize" value="5"/>
                     </userDefinedRuntimeAttributes>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dHg-bm-Abf" customClass="UIBaseTextView" customModule="SwiftUIUtilities">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dHg-bm-Abf" customClass="UIBaseTextView" customModule="SwiftBaseViews">
                     <rect key="frame" x="0.0" y="5" width="375" height="662"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -43,37 +43,37 @@
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
-                <constraint firstItem="dHg-bm-Abf" firstAttribute="top" secondItem="UPE-GM-4f8" secondAttribute="top" constant="5" id="HQa-42-ybK" customClass="BaseLayoutConstraint" customModule="SwiftUIUtilities">
+                <constraint firstItem="dHg-bm-Abf" firstAttribute="top" secondItem="UPE-GM-4f8" secondAttribute="top" constant="5" id="HQa-42-ybK" customClass="NSBaseLayoutConstraint" customModule="SwiftBaseViews">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="4"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="cNk-Z1-Ovg" firstAttribute="top" secondItem="dHg-bm-Abf" secondAttribute="top" constant="8" id="JEQ-1e-7Da" customClass="BaseLayoutConstraint" customModule="SwiftUIUtilities">
+                <constraint firstItem="cNk-Z1-Ovg" firstAttribute="top" secondItem="dHg-bm-Abf" secondAttribute="top" constant="8" id="JEQ-1e-7Da" customClass="NSBaseLayoutConstraint" customModule="SwiftBaseViews">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="-1"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="cNk-Z1-Ovg" firstAttribute="leading" secondItem="dHg-bm-Abf" secondAttribute="leading" id="MWL-jw-7Mz" customClass="BaseLayoutConstraint" customModule="SwiftUIUtilities">
+                <constraint firstItem="cNk-Z1-Ovg" firstAttribute="leading" secondItem="dHg-bm-Abf" secondAttribute="leading" id="MWL-jw-7Mz" customClass="NSBaseLayoutConstraint" customModule="SwiftBaseViews">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="0"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstAttribute="bottom" secondItem="dHg-bm-Abf" secondAttribute="bottom" id="YnB-Fp-mzd" customClass="BaseLayoutConstraint" customModule="SwiftUIUtilities">
+                <constraint firstAttribute="bottom" secondItem="dHg-bm-Abf" secondAttribute="bottom" id="YnB-Fp-mzd" customClass="NSBaseLayoutConstraint" customModule="SwiftBaseViews">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="0"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="dHg-bm-Abf" firstAttribute="leading" secondItem="UPE-GM-4f8" secondAttribute="leading" id="fRz-Lq-wAo" customClass="BaseLayoutConstraint" customModule="SwiftUIUtilities">
+                <constraint firstItem="dHg-bm-Abf" firstAttribute="leading" secondItem="UPE-GM-4f8" secondAttribute="leading" id="fRz-Lq-wAo" customClass="NSBaseLayoutConstraint" customModule="SwiftBaseViews">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="0"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstAttribute="trailing" secondItem="dHg-bm-Abf" secondAttribute="trailing" id="le7-2a-tFM" customClass="BaseLayoutConstraint" customModule="SwiftUIUtilities">
+                <constraint firstAttribute="trailing" secondItem="dHg-bm-Abf" secondAttribute="trailing" id="le7-2a-tFM" customClass="NSBaseLayoutConstraint" customModule="SwiftBaseViews">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="0"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="cNk-Z1-Ovg" firstAttribute="trailing" secondItem="dHg-bm-Abf" secondAttribute="trailing" id="o0x-RF-DSu" customClass="BaseLayoutConstraint" customModule="SwiftUIUtilities">
+                <constraint firstItem="cNk-Z1-Ovg" firstAttribute="trailing" secondItem="dHg-bm-Abf" secondAttribute="trailing" id="o0x-RF-DSu" customClass="NSBaseLayoutConstraint" customModule="SwiftBaseViews">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="constantValue" value="0"/>
                     </userDefinedRuntimeAttributes>

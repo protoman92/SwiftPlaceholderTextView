@@ -9,6 +9,7 @@
 import RxCocoa
 import RxSwift
 import RxTest
+import SwiftBaseViews
 import SwiftUtilities
 import SwiftUIUtilities
 import SwiftUtilitiesTests

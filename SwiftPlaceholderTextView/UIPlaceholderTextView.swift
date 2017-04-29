@@ -8,6 +8,7 @@
 
 import RxSwift
 import RxCocoa
+import SwiftBaseViews
 import SwiftUtilities
 import SwiftUIUtilities
 import UIKit
