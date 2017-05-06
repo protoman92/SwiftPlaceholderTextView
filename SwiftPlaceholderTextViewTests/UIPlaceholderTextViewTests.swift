@@ -1,5 +1,5 @@
 //
-//  UIplaceholderLabelTests.swift
+//  UIPlaceholderTextViewTests.swift
 //  SwiftPlaceholderTextView
 //
 //  Created by Hai Pham on 4/23/17.
@@ -15,7 +15,7 @@ import SwiftUIUtilities
 import SwiftUtilitiesTests
 import XCTest
 
-class UIplaceholderLabelTests: XCTestCase {
+class UIPlaceholderTextViewTests: XCTestCase {
     fileprivate let expectationTimeout: TimeInterval = 10
     
     fileprivate var placeholderTextView: UIPlaceholderTextView!

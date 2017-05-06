@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B0FF7AC2E8D99D698959930 /* Pods_SwiftPlaceholderTextView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A094A2F7C90FF9804E2A0E46 /* Pods_SwiftPlaceholderTextView.framework */; };
 		870C6B0B26013AAF01C2E691 /* Pods_SwiftPlaceholderTextViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1BD65796CD9DDCA54E8042 /* Pods_SwiftPlaceholderTextViewTests.framework */; };
-		D3474B071EAC3CC300251A2F /* UIPlaceholderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3474B061EAC3CC300251A2F /* UIPlaceholderViewTests.swift */; };
+		D3474B071EAC3CC300251A2F /* UIPlaceholderTextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3474B061EAC3CC300251A2F /* UIPlaceholderTextViewTests.swift */; };
 		D3474B081EAC3F0E00251A2F /* UIPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364FE3C1EA5ED5300ED702C /* UIPlaceholderTextView.swift */; };
 		D3474B091EAC3FB000251A2F /* UIPlaceholderTextView.xib in Sources */ = {isa = PBXBuildFile; fileRef = D364FE3D1EA5ED5300ED702C /* UIPlaceholderTextView.xib */; };
 		D364FE2C1EA5EBEC00ED702C /* SwiftPlaceholderTextView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D364FE221EA5EBEC00ED702C /* SwiftPlaceholderTextView.framework */; };
@@ -35,8 +35,7 @@
 		8038ECA8C67AA333994142C0 /* Pods-SwiftPlaceholderTextViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPlaceholderTextViewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftPlaceholderTextViewTests/Pods-SwiftPlaceholderTextViewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A094A2F7C90FF9804E2A0E46 /* Pods_SwiftPlaceholderTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftPlaceholderTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8215BFA229310BF7CDFE1B /* Pods-SwiftPlaceholderTextViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPlaceholderTextViewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftPlaceholderTextViewTests/Pods-SwiftPlaceholderTextViewTests.release.xcconfig"; sourceTree = "<group>"; };
-		D3474B051EAC3CC300251A2F /* SwiftPlaceholderTextViewTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftPlaceholderTextViewTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		D3474B061EAC3CC300251A2F /* UIPlaceholderViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPlaceholderViewTests.swift; sourceTree = "<group>"; };
+		D3474B061EAC3CC300251A2F /* UIPlaceholderTextViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPlaceholderTextViewTests.swift; sourceTree = "<group>"; };
 		D364FE221EA5EBEC00ED702C /* SwiftPlaceholderTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftPlaceholderTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D364FE251EA5EBEC00ED702C /* SwiftPlaceholderTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftPlaceholderTextView.h; sourceTree = "<group>"; };
 		D364FE261EA5EBEC00ED702C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,8 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				D364FE321EA5EBEC00ED702C /* Info.plist */,
-				D3474B061EAC3CC300251A2F /* UIPlaceholderViewTests.swift */,
-				D3474B051EAC3CC300251A2F /* SwiftPlaceholderTextViewTests-Bridging-Header.h */,
+				D3474B061EAC3CC300251A2F /* UIPlaceholderTextViewTests.swift */,
 			);
 			path = SwiftPlaceholderTextViewTests;
 			sourceTree = "<group>";
@@ -340,7 +338,7 @@
 			files = (
 				D3474B091EAC3FB000251A2F /* UIPlaceholderTextView.xib in Sources */,
 				D3474B081EAC3F0E00251A2F /* UIPlaceholderTextView.swift in Sources */,
-				D3474B071EAC3CC300251A2F /* UIPlaceholderViewTests.swift in Sources */,
+				D3474B071EAC3CC300251A2F /* UIPlaceholderTextViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +468,7 @@
 				INFOPLIST_FILE = SwiftPlaceholderTextView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiften.SwiftPlaceholderTextView;
+				PRODUCT_BUNDLE_IDENTIFIER = org.swiften.SwiftPlaceholderTextView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -492,7 +490,7 @@
 				INFOPLIST_FILE = SwiftPlaceholderTextView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiften.SwiftPlaceholderTextView;
+				PRODUCT_BUNDLE_IDENTIFIER = org.swiften.SwiftPlaceholderTextView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -510,7 +508,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiften.SwiftPlaceholderTextViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SwiftPlaceholderTextViewTests/SwiftPlaceholderTextViewTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -527,7 +525,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiften.SwiftPlaceholderTextViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SwiftPlaceholderTextViewTests/SwiftPlaceholderTextViewTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
